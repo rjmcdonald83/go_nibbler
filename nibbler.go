@@ -22,7 +22,6 @@ func ParseEmail(email string) (bool, string) {
 	currentState := state{}
 
 	for offset, character := range email {
-
 		// Local part
 		if !currentState.InDomain {
 			if character == '\\' {
@@ -76,7 +75,6 @@ func ParseEmail(email string) (bool, string) {
 					}
 				}
 			} else {
-
 				if !strings.ContainsRune(ATEXT, character) {
 					valid = false
 					break
@@ -91,10 +89,7 @@ func ParseEmail(email string) (bool, string) {
 			if currentState.PreviousDot && character != '.' {
 				currentState.PreviousDot = false
 			}
-
-			// Domain part, we don't allow ip addresses [x.x.x.x] only host names
 		} else {
-
 			if !strings.ContainsRune(HOSTNAME, character) {
 				valid = false
 				break

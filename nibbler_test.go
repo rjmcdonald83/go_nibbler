@@ -14,6 +14,7 @@ var examples = []example{
 	example{"woo/+@blah.com", true, "woo/+@blah.com"},
 	example{"#!$%&'*+-/=?^_`{}|~@example.org", true, "#!$%&'*+-/=?^_`{}|~@example.org"},
 	example{"\"Bob\" <bobthebuilder@dlc.com>", false, "\"Bob\""},
+	// example{"bobthebuilder@176.2.0.234", false, "bobthebuilder@176.2.0.234"},
 }
 
 func TestNibbler(t *testing.T) {
