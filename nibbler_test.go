@@ -11,10 +11,11 @@ type example struct {
 var examples = []example{
 	example{"woo", false, "woo"},
 	example{"woo@woot.com", true, "woo@woot.com"},
+	example{"hoot@hoot-hoot.com", true, "hoot@hoot-hoot.com"},
 	example{"woo/+@blah.com", true, "woo/+@blah.com"},
 	example{"#!$%&'*+-/=?^_`{}|~@example.org", true, "#!$%&'*+-/=?^_`{}|~@example.org"},
+	example{"üñîçøðé@üñîçøðé.com", true, "üñîçøðé@üñîçøðé.com"},
 	example{"\"Bob\" <bobthebuilder@dlc.com>", false, "\"Bob\""},
-	// example{"bobthebuilder@176.2.0.234", false, "bobthebuilder@176.2.0.234"},
 }
 
 func TestNibbler(t *testing.T) {

@@ -11,9 +11,9 @@ type state struct {
 const ()
 
 const (
-	ATEXT    = "!#$%&'*+-/=?^_`.{|}~@\"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+	ATEXT    = "!#$%&'*+-/=?^_`.{|}~@\"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞSSÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ÷ØÙÚÛÜÝÞŸàáâãäåæçèéêëìíîïðñòóôõö×øùúûüýþssàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿ"
 	SPECIAL  = "(),:;<>[\\] "
-	HOSTNAME = "-.abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+	HOSTNAME = "-.abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞSSÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ÷ØÙÚÛÜÝÞŸàáâãäåæçèéêëìíîïðñòóôõö×øùúûüýþssàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿ"
 )
 
 func ParseEmail(email string) (bool, string) {
@@ -102,5 +102,4 @@ func ParseEmail(email string) (bool, string) {
 		valid = false
 	}
 	return valid, address
-
 }
