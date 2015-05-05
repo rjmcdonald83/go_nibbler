@@ -1,8 +1,6 @@
 package go_nibbler
 
-import (
-	"strings"
-)
+import "strings"
 
 type state struct {
 	InQuotes, PreviousDot, PreviousSlash, InDomain bool
@@ -24,7 +22,10 @@ func ParseEmail(email string) (bool, string) {
 	for offset, character := range email {
 		// Local part
 		if !currentState.InDomain {
-			if character == '\\' {
+			if character == ' ' {
+				valid = false
+				break
+			} else if character == '\\' {
 				if currentState.InQuotes {
 					// Check if slash was backslashed within quotes
 					if currentState.PreviousSlash {
@@ -38,13 +39,11 @@ func ParseEmail(email string) (bool, string) {
 					break
 				}
 			} else if character == '"' {
-
 				if currentState.InQuotes {
 					// Ignore if it was preceded by a backslash
 					if !currentState.PreviousSlash {
 						currentState.InQuotes = false
 					} else {
-						//                     else:
 						currentState.PreviousSlash = false
 					}
 				} else {
@@ -58,6 +57,10 @@ func ParseEmail(email string) (bool, string) {
 				}
 			} else if character == '.' {
 				// We can't have two consecutive dots
+				if !currentState.InQuotes && currentState.PreviousDot {
+					valid = false
+					break
+				}
 				if !currentState.InQuotes {
 					currentState.PreviousDot = true
 				}
@@ -90,6 +93,15 @@ func ParseEmail(email string) (bool, string) {
 				currentState.PreviousDot = false
 			}
 		} else {
+			if character == '.' {
+				// We can't have two consecutive dots, even in the domain
+				if currentState.PreviousDot {
+					valid = false
+					break
+				} else {
+					currentState.PreviousDot = true
+				}
+			}
 			if !strings.ContainsRune(HOSTNAME, character) {
 				valid = false
 				break
