@@ -108,6 +108,14 @@ func ParseEmail(email string) (bool, string) {
 			} else {
 				address += string(character)
 			}
+
+			// Check states and clear them if necessary
+			if currentState.PreviousSlash && character != '\\' {
+				currentState.PreviousSlash = false
+			}
+			if currentState.PreviousDot && character != '.' {
+				currentState.PreviousDot = false
+			}
 		}
 	}
 	if !currentState.InDomain {

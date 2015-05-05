@@ -17,6 +17,7 @@ var examples = []example{
 	example{"üñîçøðé@üñîçøðé.com", true, "üñîçøðé@üñîçøðé.com"},
 	example{"\"Bob\" <bobthebuilder@dlc.com>", false, "\"Bob\""},
 	example{"really.long.but.vaild.address@example.com", true, "really.long.but.vaild.address@example.com"},
+	example{"johndoe@example.co.uk", true, "johndoe@example.co.uk"},
 	example{"Bob bobthebuilder@dlc.com", false, "Bob"},
 	example{"A@b@c@example.com", false, "A@b"},
 	example{"a\"b(c)d,e:f;g<h>i[j\\k]l@example.com", false, "a"},
