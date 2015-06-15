@@ -14,7 +14,7 @@ var examples = []example{
 	example{"hoot@hoot-hoot.com", true, "hoot@hoot-hoot.com"},
 	example{"woo/+@blah.com", true, "woo/+@blah.com"},
 	example{"#!$%&'*+-/=?^_`{}|~@example.org", true, "#!$%&'*+-/=?^_`{}|~@example.org"},
-	example{"üñîçøðé@üñîçøðé.com", true, "üñîçøðé@üñîçøðé.com"},
+	example{"üñîçøðé@üñîçøðéı.com", true, "üñîçøðé@üñîçøðéı.com"},
 	example{"\"Bob\" <bobthebuilder@dlc.com>", false, "\"Bob\""},
 	example{"really.long.but.vaild.address@example.com", true, "really.long.but.vaild.address@example.com"},
 	example{"johndoe@example.co.uk", true, "johndoe@example.co.uk"},

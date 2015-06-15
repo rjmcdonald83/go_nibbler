@@ -11,7 +11,7 @@ const ()
 const (
 	ATEXT    = "!#$%&'*+-/=?^_`.{|}~@\"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞSSÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ÷ØÙÚÛÜÝÞŸàáâãäåæçèéêëìíîïðñòóôõö×øùúûüýþssàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿ"
 	SPECIAL  = "(),:;<>[\\] "
-	HOSTNAME = "-.abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞSSÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ÷ØÙÚÛÜÝÞŸàáâãäåæçèéêëìíîïðñòóôõö×øùúûüýþssàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿ"
+	HOSTNAME = "-.abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞSSÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ÷ØÙÚÛÜÝÞŸàáâãäåæçèéêëìíîïðñòóôõö×øùúûüýþssàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿı"
 )
 
 func ParseEmail(email string) (bool, string) {
