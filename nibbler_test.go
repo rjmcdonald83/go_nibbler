@@ -25,6 +25,7 @@ var examples = []example{
 	example{"john..doe@example.com", false, "john."},
 	example{"john......doe@example.com", false, "john."},
 	example{"john.doe@example..com", false, "john.doe@example."},
+	example{"john.doe@exam_ple.com", false, "john.doe@exam"},
 	example{" johndoe@example.com", false, ""},
 	example{"johndoe@example.com ", false, "johndoe@example.com"},
 }
