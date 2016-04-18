@@ -1,7 +1,6 @@
 package go_nibbler
 
 import (
-	"fmt"
 	"strings"
 	"testing"
 )
@@ -77,7 +76,7 @@ var invalidExamples = []example{
 	example{"user@test.-example.com", false, "user@test."},
 	example{"test@example.com.", false, "test@example.com"},
 	example{"test@[example.com]", false, "test@"},
-	example{strings.Replace(fmt.Sprintf(fmt.Sprintf("%%%ds", 255), "x"), " ", "x", -1), false, strings.Replace(fmt.Sprintf(fmt.Sprintf("%%%ds", 254), "x"), " ", "x", -1)},
+	example{strings.Repeat("a", 255), false, strings.Repeat("a", 254)},
 }
 
 func TestValidEmail(t *testing.T) {
